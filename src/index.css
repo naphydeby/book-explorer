@@ -1,0 +1,8 @@
+@import "tailwindcss";
+body {
+  @apply bg-blue-50; 
+}
+
+/* body {
+  @apply bg-[url('/bookshelf.jpeg')] bg-cover bg-center min-h-screen;
+} */
