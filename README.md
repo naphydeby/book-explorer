@@ -1,4 +1,4 @@
-# Mini Book Explorer
+# Book Explorer
 
 A responsive web application that allows users to search for books using the Open Library API and view book details including title, author, cover image, and publication year.
 
