@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { FaSearch } from 'react-icons/fa';
 
 const BookSearch = () => {
   const [query, setQuery] = useState('');
@@ -36,23 +37,26 @@ const BookSearch = () => {
   return (
     <div>
       <form onSubmit={searchBooks} className="mb-6">
-        <div className="flex">
-          <input
-            type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search for books by title, author, or keyword..."
-            className="flex-grow p-4 bg-white border-0 shadow-md rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <button
-            type="submit"
-            disabled={!query.trim() || loading}
-            className="bg-blue-600 text-white px-4 py-2 rounded-r hover:bg-blue-700 disabled:bg-blue-300 disabled:cursor-not-allowed"
-          >
-            {loading ? 'Searching...' : 'Search'}
-          </button>
-        </div>
-      </form>
+  <div className="relative flex">
+    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+      <FaSearch className="text-gray-400" />
+    </div>
+    <input
+      type="text"
+      value={query}
+      onChange={(e) => setQuery(e.target.value)}
+      placeholder="Search for books by title, author, or keyword..."
+      className="flex-grow p-4 pl-10 bg-white border-0 shadow-md rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+    <button
+      type="submit"
+      disabled={!query.trim() || loading}
+      className="bg-blue-600 text-white px-4 py-2 rounded-r hover:bg-blue-700 disabled:bg-blue-300 disabled:cursor-not-allowed"
+    >
+      {loading ? 'Searching...' : 'Search'}
+    </button>
+  </div>
+</form>
 
       {error && <div className="p-4 mb-4 bg-red-100 text-red-700 rounded">{error}</div>}
 
