@@ -11,9 +11,9 @@ function App() {
     <Router>
       <div className="container mx-auto px-4 py-8 ">
          <header className="text-center mb-8">
-          <div className='flex justify-center gap-4'>
+          <div className='flex justify-center gap-2 md:gap-4'>
             <img className='w-20 h-20' src={book} alt="books" />
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 mt-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 mt-6 md:mt-4">
             Mini Book Explorer
           </h1>
           </div>
